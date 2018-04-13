@@ -1,0 +1,243 @@
+@import "variables";
+
+.container {
+    margin: 0 auto;
+    display: block;
+    background: rgba(255,255,255,0);
+    margin-top: -40px;
+    width: 70%;
+    max-width: 1300px;
+    min-width: 310px;
+
+    header {
+        padding: 20px 0;
+        text-align: center;
+        font-family: $titlefont;
+        margin-bottom: 40px;
+
+        .svgLine_2 {
+            margin: 35px auto;
+        }
+
+        .logo {
+            img {
+                display: none;
+            }
+        }
+
+        #menuresponsive {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+
+            .burger {
+                display: none;
+            }
+        }
+
+        .open {
+            transform: translateX(0) !important;
+        }
+
+        #fullmenuresponsive {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: #ffffff;
+            padding-top: 52px;
+            transition: 1s;
+            transition-timing-function: ease-in-out;
+            transform: translateX(-100vw);
+
+            .fullmenu {
+                #close {
+                    right: 16px;
+                    position: absolute;
+                    top: 10px;
+                    font-size: 33px;
+                }
+
+                .fullmenubtn {
+                    width: 100%;
+                    display: block;
+                    padding: 20px;
+                    font-size: 1.8em;
+                    text-decoration: none;
+                    letter-spacing: 2px;
+                    transition: 0.3s;
+
+                    &:hover {
+                        color: grey;
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+
+        .logo {
+            display: block;
+        }
+
+        .menu {
+            position: relative;
+            top: 44px;
+        }
+
+        .btn {
+            color: $withe;
+            background: $black;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-left: 5px;
+            margin-top: -20px;
+
+            &:hover {
+                background: $withe;
+                color: #1b1b1b;
+            }
+        }
+
+        .info {
+            margin-top: -65px;
+
+            p {
+                margin: 0;
+                text-align: left;
+                font-size: 18.5px;
+                font-weight: bold;
+                letter-spacing: 1px;
+                position: static;
+            }
+
+            a {
+                color: $black;
+                text-decoration: none;
+            }
+        }
+    }
+}
+@media only screen and (max-width:1025px) {
+    .container header #menuresponsive .burger {
+        position: fixed;
+    }
+
+    .container{
+      header {
+          .info {
+              display: none;
+          }
+
+          .menu {
+              display: none;
+          }
+
+          .svgLine_2 {
+              display: none;
+          }
+          .logo  {
+            img{
+              max-width: 400px;
+              max-height: 300px;
+              margin: 0 auto;
+              display: block;
+              margin-top: 50px;;
+          }
+          }
+          .burger {
+              display: block !important;
+              $width: 28px;
+              $thickness: 4px;
+              border: 0;
+              background: none;
+              outline: 0;
+              padding: 0;
+              cursor: pointer;
+              border-bottom: $thickness solid currentColor;
+              width: $width;
+              transition: border-bottom 1s ease-in-out;
+              -webkit-transition: border-bottom 1s ease-in-out;
+              // Fix for extra space in Firefox
+              &::-moz-focus-inner {
+                  border: 0;
+                  padding: 0;
+              }
+
+              &:before {
+                  content: "";
+                  display: block;
+                  border-bottom: $thickness solid currentColor;
+                  width: 100%;
+                  margin-bottom: 5px;
+                  transition: transform 0.5s ease-in-out;
+                  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+              }
+
+              &:after {
+                  content: "";
+                  display: block;
+                  border-bottom: $thickness solid currentColor;
+                  width: 100%;
+                  margin-bottom: 5px;
+                  transition: transform 0.5s ease-in-out;
+                  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+              }
+
+              &.open {
+                  border-bottom: $thickness solid transparent;
+                  transition: border-bottom 0.8s ease-in-out;
+                  -webkit-transition: border-bottom 0.8s ease-in-out;
+
+                  &:before {
+                      transform: rotate(-405deg) translateY(1px) translateX(-3px);
+                      -webkit-transform: rotate(-405deg) translateY(1px) translateX(-3px);
+                      transition: transform 0.5s ease-in-out;
+                      -webkit-transition: -webkit-transform 0.5s ease-in-out;
+                  }
+
+                  &:after {
+                      transform: rotate(405deg) translateY(-4px) translateX(-5px);
+                      -webkit-transform: rotate(405deg) translateY(-4px) translateX(-5px);
+                      transition: transform 0.5s ease-in-out;
+                      -webkit-transition: -webkit-transform 0.5s ease-in-out;
+                  }
+              }
+          }
+          // * * * Demo * * *
+          body {
+              background-color: rosybrown;
+              text-align: center;
+              font-family: 'Cutive Mono',;
+              color: white;
+              line-height: 25px;
+          }
+
+          a {
+              color: inherit;
+          }
+
+          .burger {
+              color: black;
+          }
+
+          small {
+              font-size: 10px;
+          }
+
+
+      }
+    }
+
+
+}
+@media only screen and (max-width:800px) {
+    .btn {
+        font-size: 10px;
+        padding: 5px;
+        height: 5px;
+    }
+}
